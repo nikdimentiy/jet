@@ -8,7 +8,7 @@ public class LogicShift {
         // Logically shift a number to the left
 
         operand = (byte) (operand << 2);   // 0000 0100
-        System.out.println("Number after shift left : " + operand);
+        System.out.println("Number after left shift : " + operand);
 
         // Logically shift a number to the right
 
