@@ -1,6 +1,5 @@
 // C program to compute sum of digits in number
 
-
 /* Function to get sum of digits */
 int getSum(int n) 
 { 
