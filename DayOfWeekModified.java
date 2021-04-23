@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class DayOfWeekModified {
     public static void main(String[] args) {
-        int myDay;
         System.out.println("Enter the day of the week number: 1-2-3-4-5-6-7:");
         Scanner in = new Scanner(System.in);
         String day = in.next();
