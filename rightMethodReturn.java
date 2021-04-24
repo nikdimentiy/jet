@@ -1,5 +1,5 @@
 // An example of correct multiple return from a method
-public class rightMethodReturn {
+public class RightMethodReturn {
 
     static String compare(int value1, int value2) {
         if (value1 < value2) {
