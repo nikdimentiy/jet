@@ -1,3 +1,4 @@
+# basic carculator
 x = float(input("Enter first number, please: "))
 y = float(input("Enter second number, please: "))
 
