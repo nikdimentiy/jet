@@ -1,3 +1,5 @@
+// search in the array using an extended loop (for) -> (for-each)
+
 class SearchInArray {
     public static void main(String[] args) {
         int nums[] = {6, 8, 3, 7, 5, 6, 1, 4};
