@@ -1,3 +1,4 @@
+// using a cycle (for-each) to sum up values in a two-dimensional array
 public class TwoDimentionalArrayFill {
 
     public static void main(String[] args) {
