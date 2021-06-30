@@ -1,3 +1,5 @@
+// the program calculates the largest sequence chain in a given range of numbers
+
 import java.util.Scanner;
 
 public class Hailstone {
