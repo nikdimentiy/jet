@@ -1,3 +1,7 @@
+// // Java program to generate hailstone
+// numbers and calculate steps required
+// to reduce them to 1
+
 import java.util.*;
 
 class HailstoneNumbersOut {
