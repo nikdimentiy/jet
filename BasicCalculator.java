@@ -1,3 +1,5 @@
+// the code represent: basic math calculator 
+
 import java.util.Scanner;
 
 class Maths {
