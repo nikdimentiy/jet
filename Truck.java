@@ -1,3 +1,5 @@
+// two classes in one file...tiny code..checking a truck to weight (normalWeight -> maxWeight)
+
 public class Truck {
 	int length;
 	int width;
