@@ -1,48 +1,37 @@
 // two classes in one file...tiny code..checking a truck to weight (normalWeight -> maxWeight)
 
 public class Truck {
-	int length;
-	int width;
-	int height;
-	int weight;
+    int weight;
 
-	public int getVolume() {
-		int volume = length * width * height;
-		return volume;
-	}
+    public static void main(String[] args) {
+        Truck first = new Truck();
+        first.weight = 10000;
+        Truck second = new Truck();
+        second.weight = 20000;
 
-	public static void main(String[] args) {
-		Truck first = new Truck();
-		first.weight = 10000;
-		Truck second = new Truck();
-		second.weight = 20000;
+        BridgeOfficer officer = new BridgeOfficer(15000);
+        System.out.println("Truck #1. It's possible to go ahead?");
+        boolean canFirstTruckGo = officer.checkTruck(first);
+        System.out.println(canFirstTruckGo);
 
-		BridgeOfficer officer = new BridgeOfficer(15000);
-		System.out.println("Truck #1. It's possible to go ahead?");
-		boolean canFirstTruckGo = officer.checkTruck(first);
-		System.out.println(canFirstTruckGo);
+        System.out.println();
 
-		System.out.println();
-
-		System.out.println("Truck #2. It's possible to go ahead?");
-		boolean canSecondTruckGo = officer.checkTruck(second);
-		System.out.println(canSecondTruckGo);
-	}
+        System.out.println("Truck #2. It's possible to go ahead?");
+        boolean canSecondTruckGo = officer.checkTruck(second);
+        System.out.println(canSecondTruckGo);
+    }
 
 }
 
 class BridgeOfficer {
-	int maxWeight;
+    int maxWeight;
 
-	public BridgeOfficer(int normalWeight) {
-		this.maxWeight = normalWeight;
-	}
+    public BridgeOfficer(int normalWeight) {
+        this.maxWeight = normalWeight;
+    }
 
-	public boolean checkTruck(Truck truck) {
-		if (truck.weight > maxWeight) {
-			return false;
-		} else {
-			return true;
-		}
-	}
+    public boolean checkTruck(Truck truck) {
+        return truck.weight <= maxWeight;
+    }
 }
+
