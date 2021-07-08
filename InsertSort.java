@@ -1,5 +1,5 @@
 // Java program for implementation of Insertion Sort
-class InsertionSort
+class InsertSort
 {
 	/*Function to sort array using insertion sort*/
 	void sort(int arr[])
