@@ -8,16 +8,16 @@ public class GuessGame {
         p2 = new Player();
         p3 = new Player();
 
-        int guess1 = 0;
-        int guess2 = 0;
-        int guess3 = 0;
+        int guessp1;
+        int guessp2;
+        int guessp3;
 
         boolean p1isRight = false;
         boolean p2isRight = false;
         boolean p3isRight = false;
 
         int targetNumber = (int) (Math.random() * 10);
-        System.out.println("I have a secret number from 1 to 9...:");
+        System.out.println("I have a secret number from 1 to 9....");
 
         while (true) {
             System.out.println("The number to guess - " + targetNumber);
@@ -34,6 +34,8 @@ public class GuessGame {
 
             guessp3 = p3.number;
             System.out.println("The third player thinks this number is: " + guessp3);
+
+            System.out.println("\n");
 
             if (guessp1 == targetNumber) {
                 p1isRight = true;
@@ -59,3 +61,20 @@ public class GuessGame {
         }
     }
 }
+
+class Player {
+    int number = 0;
+
+    public void guess() {
+        number = (int) (Math.random() * 10);
+        System.out.println("I think this number is: " + number);
+    }
+}
+
+class GameLauncher {
+    public static void main(String[] args) {
+        GuessGame game = new GuessGame();
+        game.startGame();
+    }
+}
+
