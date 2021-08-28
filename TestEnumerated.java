@@ -1,3 +1,8 @@
+/*
+   Enumerated types (enum).
+   Constructor and methods.
+*/
+
 enum Company {
     // Instances
     WEBCAMP(1000), GOOGLE(100), SKYNET(10); 
