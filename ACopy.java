@@ -1,3 +1,5 @@
+// filling array and coping operation into another array
+
 class ACopy {
     public static void main(String[] args) {
         int i;
