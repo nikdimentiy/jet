@@ -1,8 +1,10 @@
 
 abstract class AbstractClass {
+    // Constructor (works out first). 
     public AbstractClass() {
         System.out.println("1 AbstractClass()");
-
+        
+        // The method implementation from the derived class is called - ConcreteClass 
         this.abstractMethod();
 
         System.out.println("2 AbstractClass()");
@@ -14,6 +16,7 @@ abstract class AbstractClass {
 class ConcreteClass extends AbstractClass {
     String s = "FIRST";
 
+    // Constructor (works out second). 
     public ConcreteClass() {
         System.out.println("3 ConcreteClass()");
         s = "SECOND";
