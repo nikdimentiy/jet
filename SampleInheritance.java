@@ -1,4 +1,4 @@
-package lesson_25;
+// java program with an example of inheritance
 
 public class SampleInheritance {
     public static void main(String[] args) {
