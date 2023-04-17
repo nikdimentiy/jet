@@ -2,6 +2,13 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Kata {
+    /**
+     * Reverses each word in a string, while preserving the spaces.
+     * 
+     * @param original the input string to be reversed
+     * @return the reversed string
+     */
+    @Override
     public static String reverseWords(final String original) {
         String[] words = original.split("(?<=\\s)|(?=\\s+)");
         for (int i = 0; i < words.length; i++) {
