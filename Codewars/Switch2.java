@@ -1,6 +1,6 @@
 // CodeWars task: solution -> https://www.codewars.com/kata/57f759bb664021a30300007d/java
 
-public class Switch {
+public class Switch2 {
     /**
      * Switches the positions of 'a' and 'b' in the given string.
      * Leaves any other characters untouched.
