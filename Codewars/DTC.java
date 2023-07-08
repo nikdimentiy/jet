@@ -1,45 +1,69 @@
 // CodeWars task: solution -> https://www.codewars.com/kata/6397b0d461067e0030d1315e/train/java
 // 🎯 Preparation to coding interview 🍀
 
-// This class contains methods to convert between normal time and industrial time
+import java.text.DecimalFormat;
+
+/**
+ * This class provides functions for converting between standard time and decimal time.
+ */
 public class DTC {
-    // This method takes a normal time in the format of hh:mm and returns the corresponding industrial time as a double
-    public static double toIndustrial(String time) {
-        // Split the time string by the colon and store the parts in an array
-        String[] parts = time.split(":");
-        // Parse the first part as an integer for hours
-        int hours = Integer.parseInt(parts[0]);
-        // Parse the second part as an integer for minutes
-        int minutes = Integer.parseInt(parts[1]);
-        // Calculate the decimal hours by adding the hours and the minutes divided by 60.0
-        double decimalHours = hours + minutes / 60.0;
-        // Multiply the decimal hours by 0.02 and round it to two decimal places
-        return Math.round(decimalHours * 0.02 * 100.0) / 100.0;
-    }
 
-    // This method takes an integer representing the number of hours and returns the corresponding industrial time as a double
-    public static double toIndustrial(int time) {
-        // Multiply the hours by 0.02 and return the result
-        return time * 0.02;
-    }
+  /**
+   * The decimal format used to format minutes.
+   */
+  public static final DecimalFormat MINUTES = new DecimalFormat("00");
 
-    // This method takes an industrial time as a double and returns the corresponding normal time in the format of hh:mm
-    public static String toNormal(double time) {
-        // Cast the double to an integer for hours
-        int hours = (int) time;
-        // Subtract the hours from the double and multiply by 100 to get the minutes as an integer
-        int minutes = (int) ((time - hours) * 100);
-        // Return a string with the hours and minutes separated by a colon, padding the minutes with zeros if needed
-        return hours + ":" + String.format("%02d", minutes);
-    }
+  /**
+   * Converts a string representing standard time to decimal time.
+   *
+   * @param time The string representing standard time in the format "h:mm".
+   * @return The decimal time.
+   */
+  public static double toIndustrial(String time) {
+    // Split the string into hours and minutes.
+    String[] arr = time.split(":");
 
-    // This is the main method that tests the other methods with some examples
-    public static void main(String[] args) {
-        // Print the industrial time for 1:45 using the first method
-        System.out.println(DTC.toIndustrial("1:45"));  // Output: 1.75
-        // Print the industrial time for 1 hour using the second method
-        System.out.println(DTC.toIndustrial(1));       // Output: 0.02
-        // Print the normal time for 0.33 industrial time using the third method
-        System.out.println(DTC.toNormal(0.33));        // Output: 0:20
-    }
+    // Convert the hours and minutes to decimal time.
+    double hours = Double.parseDouble(arr[0]);
+    double minutes = Double.parseDouble(arr[1]) / 60.0;
+
+    // Return the decimal time.
+    return hours + minutes;
+  }
+
+  /**
+   * Converts an integer representing standard time to decimal time.
+   *
+   * @param time The integer representing standard time in minutes.
+   * @return The decimal time.
+   */
+  public static double toIndustrial(int time) {
+    // Convert the time to decimal time.
+    double decimalTime = time / 60.0;
+
+    // Round the decimal time to two decimal places.
+    decimalTime = Math.round(decimalTime * 100) / 100.0;
+
+    // Return the decimal time.
+    return decimalTime;
+  }
+
+  /**
+   * Converts a decimal time to a string representing standard time.
+   *
+   * @param time The decimal time.
+   * @return The string representing standard time in the format "h:mm".
+   */
+  public static String toNormal(double time) {
+    // Get the hours and minutes from the decimal time.
+    int hours = (int) time;
+    double minutes = time - hours;
+
+    // Format the minutes.
+    String minutesStr = MINUTES.format(Math.round(minutes * 60));
+
+    // Return the string representing standard time.
+    return String.format("%d:%s", hours, minutesStr);
+  }
 }
+
