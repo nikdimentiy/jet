@@ -1,5 +1,5 @@
 // Preparation for coding interview: CodeWars task -> solution: https://www.codewars.com/kata/547c71fdc5b2b38db1000098/java
-package codewars
+package codewars;
 
 public class NameMe {
     public String firstName; // The first name of the person.
