@@ -1,42 +1,53 @@
-// Sample of switch case statement
-
+/**
+ * This program demonstrates the use of a switch statement to print the name of the day of the week.
+ *
+ * @author Dmitriy Nikey
+ */
 import java.util.Scanner;
 
 public class DayOfWeek {
+
+    /**
+     * This method is the main method of the program.
+     *
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        int myDay;
+        // Get the day of the week from the user
         System.out.println("Enter the day of the week number: 1-2-3-4-5-6-7:");
         Scanner in = new Scanner(System.in);
-        myDay = in.nextInt();
+        int myDay = in.nextInt();
 
-        // Convert the value of the (string) variable myDay to an integer value
-        // and write it to a variable named MyDay of type (int)
-
+        // Convert the day of the week to a string
+        String dayOfWeekString = "";
         switch (myDay) {
             case 1:
-                System.out.println("Monday");
+                dayOfWeekString = "Monday";
                 break;
             case 2:
-                System.out.println("Tuesday");
+                dayOfWeekString = "Tuesday";
                 break;
             case 3:
-                System.out.println("Wednesday");
+                dayOfWeekString = "Wednesday";
                 break;
             case 4:
-                System.out.println("Thursday");
+                dayOfWeekString = "Thursday";
                 break;
             case 5:
-                System.out.println("Friday");
+                dayOfWeekString = "Friday";
                 break;
             case 6:
-                System.out.println("Saturday");
+                dayOfWeekString = "Saturday";
                 break;
             case 7:
-                System.out.println("Sunday");
+                dayOfWeekString = "Sunday";
                 break;
             default:
-                System.out.println("You entered a non-existent day of the week");
+                dayOfWeekString = "Invalid day of the week";
                 break;
         }
+
+        // Print the name of the day of the week
+        System.out.println("The day of the week is " + dayOfWeekString);
     }
 }
