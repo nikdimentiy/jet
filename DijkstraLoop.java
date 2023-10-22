@@ -1,34 +1,28 @@
-// The Dijkstra cycle.
-//
-// When the Dijkstra loop is executed, the protected conditions are calculated in each iteration.
-// If at least one of them is true, the corresponding protected command is executed, after which a new iteration begins
-// (if several protected conditions are true, only one protected command is executed).
-// If all the protected conditions are false, the loop ends.
-// A Dijkstra loop with one guard condition and one guard
-// command is essentially a normal loop with a precondition (a "while" loop).
-// A loop consists of one or more branches (protected expressions),
-// each of which is a pair of the guarding condition and the guarded team.
-
 import java.util.Scanner;
 
 public class DijkstraLoop {
     public static void main(String[] args) {
-        char character;
-        Scanner in = new Scanner(System.in);
+        char character;  // Declare a character variable to store user input
+        Scanner in = new Scanner(System.in);  // Create a Scanner object to read input from the user
 
-        for (; ; ) {
-            character = in.next().charAt(0);
+        while (true) {  // Start an infinite loop
+            character = in.next().charAt(0);  // Read a single character input from the user
 
-            switch (character) {
-                case 'l': // 'l' - guard condition 1
-                    System.out.println("Go left");    // guard command
-                    continue;
+            switch (character) {  // Begin a switch statement to evaluate the input character
+                case 'l':  // If the input character is 'l'
+                    System.out.println("Go left");  // Output a message to indicate going left
+                    break;  // Exit the switch statement
 
-                case 'r': // 'r' - guard condition 2
-                    System.out.println("Go right");   // guard command
-                    continue;
+                case 'r':  // If the input character is 'r'
+                    System.out.println("Go right");  // Output a message to indicate going right
+                    break;  // Exit the switch statement
+
+                default:  // If the input character is neither 'l' nor 'r
+                    System.out.println("Invalid input. Please enter 'l' or 'r'");  // Output an error message
+                    // You can choose to either continue the loop or exit the program on invalid input
+                    // continue; // Uncomment this line to continue the loop on invalid input
+                    // return; // Uncomment this line to exit the program on invalid input
             }
-            break;  // break cycle (loop).
         }
     }
 }
