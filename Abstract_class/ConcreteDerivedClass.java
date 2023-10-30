@@ -1,13 +1,17 @@
+/**
+ * This is an abstract base class that provides a template for derived classes.
+ */
+public abstract class AbstractBaseClass {
 
-public class ConcreteDerivedClass extends AbstractBaseClass {
+    /**
+     * This is an abstract method that must be implemented by derived classes.
+     */
+    public abstract void abstractMethod();
 
-    @Override
+    /**
+     * This is a method that can be optionally overridden by derived classes.
+     */
     public void overriddenMethod() {
-        System.out.println("DerivedClass.overriddenMethod();");
-    }
-
-    @Override
-    public void abstractMethod() {
-        System.out.println("DerivedClass.abstractMethod();");
+        System.out.println("AbstractBaseClass.overriddenMethod();");
     }
 }
