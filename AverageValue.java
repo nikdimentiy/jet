@@ -1,34 +1,46 @@
-// the programm calculate: min, max value of entered array, and average
-
-import java.lang.*;
-
+/**
+ * The AverageValue class calculates the minimum value, maximum value, and average of the elements in a given array.
+ */
 public class AverageValue {
+
+    /**
+     * Main method to perform calculations and display the results.
+     *
+     * @param args The command-line arguments (unused in this case).
+     */
     public static void main(String[] args) {
+        // Given array
         int[] arr = {9, 2, 6, 4, 5, 12, 7, 8, 6};
+
+        // Initialize variables for max, min, sum, and average
         int tempMax = arr[0];
         int tempMin = arr[0];
         int sum = 0;
         double averageValue;
 
-        // method for sum of elements in an array
-        for (int j : arr) {
-            sum += j;
+        // Calculate the sum of elements in the array
+        for (int element : arr) {
+            sum += element;
         }
+
+        // Calculate the average value
         averageValue = (double) sum / arr.length;
 
-        for (int j : arr) { // finding min value and index position
-            if (j < tempMin) {
-                tempMin = j;
+        // Find the min and max values
+        for (int element : arr) {
+            // Finding the min value
+            if (element < tempMin) {
+                tempMin = element;
             }
-            if (j > tempMax) { // finding max value and index position
-                tempMax = j;
+            // Finding the max value
+            if (element > tempMax) {
+                tempMax = element;
             }
         }
 
-        System.out.println("\n");
-
-        System.out.println("Max value in generated array is: " + tempMax);
-        System.out.println("Min value in generated array is: " + tempMin);
-        System.out.format("The average value of entered array is: %.2f", averageValue);
+        // Output the results
+        System.out.println("Max value in the array is: " + tempMax);
+        System.out.println("Min value in the array is: " + tempMin);
+        System.out.format("The average value of the array is: %.2f", averageValue);
     }
 }
