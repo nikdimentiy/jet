@@ -1,17 +1,27 @@
-// Java code: ternary operator in a statement conditions
-
+/**
+ * TotalCostTernary class calculates the total cost of a product based on quantity, price, and discount.
+ */
 public class TotalCostTernary {
 
+    /**
+     * The main method calculates the total cost using a ternary operator based on quantity and applies a discount if applicable.
+     *
+     * @param args The command-line arguments (unused).
+     */
     public static void main(String[] args) {
-        double quantity = 12;    // Number of product units
-        double price = 100;      // Price per unit of product
-        double discount = 0.75;  // Discount on the total cost - 25%.
-        double cost;             // Total cost
+        // Number of product units
+        double quantity = 12;
+        // Price per unit of product
+        double price = 100;
+        // Discount on the total cost - 25%
+        double discount = 0.75;
+        // Total cost
+        double cost;
 
-        // IF: We bought 10 items or more. TO: provide a 25% discount. OTHERWISE: Do not provide a discount
-
+        // Ternary operator: If quantity is 10 or more, apply a 25% discount, otherwise, no discount.
         cost = quantity >= 10 ? quantity * price * discount : quantity * price;
 
-        System.out.println("The total cost of the product is: " + cost + "$");
+        // Display the total cost of the product
+        System.out.println("The total cost of the product is: $" + cost);
     }
 }
