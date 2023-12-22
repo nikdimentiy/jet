@@ -1,7 +1,31 @@
-// main method for testing
-
+/**
+ * The Main class contains a method for performing arithmetic operations.
+ */
 public class Main {
+
+    /**
+     * Adds two integers and returns the result.
+     *
+     * @param a The first integer operand.
+     * @param b The second integer operand.
+     * @return The sum of the two integers.
+     */
     public static int getSum(int a, int b) {
+        // The following line performs the addition operation and returns the result.
         return a + b;
     }
+
+    /**
+     * Main method for testing the getSum function.
+     *
+     * @param args The command-line arguments (not used in this example).
+     */
+    public static void main(String[] args) {
+        // Example usage of the getSum method
+        int result = getSum(5, 7);
+        System.out.println("The sum is: " + result);
+
+        // Additional test cases or usage scenarios can be added here.
+    }
 }
+
