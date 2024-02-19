@@ -1,35 +1,46 @@
-// filling array with method random, and represent max and min value (also position) in generated array
-
+/**
+ * This program generates an array of random integers, finds the maximum and minimum values along with their positions,
+ * and displays the generated array along with these values and positions.
+ */
 public class MaxMinArray {
     public static void main(String[] args) {
+        // Initialize the array
         int[] arr = new int[10];
+
+        // Fill the array with random values ranging from -5 to 95
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) ((Math.random() * 100) - 5); // random filling: from - 5 by + 100
+            arr[i] = (int) ((Math.random() * 100) - 5);
         }
+
+        // Display the generated array
+        System.out.println("Generated Array:");
         for (int j : arr) {
-            System.out.print(j + "  "); // showing output array
-        }
-
-        int tempMax = arr[0];
-        int tempMin = arr[0];
-        int valueMax = 0;
-        int valueMin = 0;
-
-        for (int i = 0; i < arr.length; i++) { // finding min value and index position
-            if (arr[i] < tempMin) {
-                tempMin = arr[i];
-                valueMin = i;
-            }
-            if (arr[i] > tempMax) { // finding max value and index position
-                tempMax = arr[i];
-                valueMax = i;
-            }
+            System.out.print(j + "  ");
         }
         System.out.println("\n");
 
-        System.out.println("Max value in generated array is: " + tempMax);
-        System.out.println("Min value in generated array is: " + tempMin);
-        System.out.println("Max value index - position number: " + valueMax);
-        System.out.println("Min value index - position number: " + valueMin);
+        // Initialize variables to hold maximum and minimum values and their respective positions
+        int max = arr[0];
+        int min = arr[0];
+        int maxIndex = 0;
+        int minIndex = 0;
+
+        // Find the maximum and minimum values and their positions in the array
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+                minIndex = i;
+            }
+            if (arr[i] > max) {
+                max = arr[i];
+                maxIndex = i;
+            }
+        }
+
+        // Display the maximum and minimum values along with their positions
+        System.out.println("\nMax value in generated array is: " + max);
+        System.out.println("Min value in generated array is: " + min);
+        System.out.println("Index of Max value: " + maxIndex);
+        System.out.println("Index of Min value: " + minIndex);
     }
 }
